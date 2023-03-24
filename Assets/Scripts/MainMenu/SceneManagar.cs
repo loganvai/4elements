@@ -19,7 +19,7 @@ public class SceneManagar : MonoBehaviour
         Fire.interactable = false;
         Air.interactable = false;
 
-        LevelComplete = PlayerPrefs.GetInt("LevelComplete",1);
+        LevelComplete = PlayerPrefs.GetInt("LevelComplete");
 
         switch (LevelComplete)
         {

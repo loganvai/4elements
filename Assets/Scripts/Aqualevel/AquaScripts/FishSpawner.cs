@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class FishSpawner : MonoBehaviour
 {
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject canvas1;
 
     [SerializeField] public GameObject Fish;
     public TextMeshProUGUI message;
@@ -50,7 +51,11 @@ public class FishSpawner : MonoBehaviour
             bigtimestart -= Time.deltaTime;
             message1.text = Mathf.Round(bigtimestart).ToString();
         }
-
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            canvas1.SetActive(true);
+            Time.timeScale = 0;
+        }
 
     }
     void SpawnFish(float positionx1, float positionx2, float positiony1, float positiony2, int rotation, float speedx, float speedy)
@@ -130,6 +135,7 @@ public class FishSpawner : MonoBehaviour
         SpawnFish(2.87f, 7.839f, -5.27f, -5.27f, -90, 0, 3f); ;
    
     }
+    
 
         //}
         //if(localscale.x >0)

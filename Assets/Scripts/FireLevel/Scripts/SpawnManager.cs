@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] SliderController slider;
     [SerializeField] Movement mover;
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject canvas1;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,11 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            canvas1.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
     public void Spawn()
     {

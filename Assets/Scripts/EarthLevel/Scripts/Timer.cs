@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
     int year2;
     public Sprite sprite2;
     [SerializeField] public SpriteRenderer spriteRenderer;
-
+    [SerializeField] GameObject canvas1;
     [SerializeField] public TextMeshProUGUI inputText;
     [SerializeField] public TextMeshProUGUI inputText2;
     // Start is called before the first frame update
@@ -43,7 +43,13 @@ public class Timer : MonoBehaviour
                 Invoke("canvasik",3);
                 spriteRenderer.sprite = sprite2;
             }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            canvas1.SetActive(true);
+            Time.timeScale = 0;
         }
+
+    }
      void canvasik()
     {
         canvas.SetActive(true);

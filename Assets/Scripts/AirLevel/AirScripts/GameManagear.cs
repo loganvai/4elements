@@ -11,6 +11,7 @@ public class GameManagear : MonoBehaviour
     public TextMeshProUGUI Score;
     [SerializeField] public SpawnerPipes spawner;
     [SerializeField] public GameObject canvas;
+    [SerializeField] public GameObject canvas1;
     [SerializeField] public Slider slider;
 
     // Start is called before the first frame update
@@ -39,8 +40,12 @@ public class GameManagear : MonoBehaviour
             
         }
         slider.value = score;
-        
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            canvas1.SetActive(true);
+            Time.timeScale = 0;
+        }
+
     }
         
             void canvasik()
